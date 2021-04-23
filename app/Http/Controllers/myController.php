@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Hash;
 
 class myController extends Controller
 {
@@ -34,7 +35,13 @@ class myController extends Controller
 
     public function home()
     {
-        return view('home');
+        if (Auth::user()->type)
+        {
+            return redirect()->route('dashboard');
+        }else
+        {
+            return view('home');
+        }
     }
 
     public function remove($userid, $itemid)
@@ -45,17 +52,27 @@ class myController extends Controller
 
     public function listing()
     {
-        $listing = DB::select('select * from listing where userid = ?', [Auth::user()->userid]);
-        return view('list', ['items' => $listing]);
+        if (Auth::user()->type)
+        {
+            return redirect()->route('dashboard');
+        }else
+        {
+            $listing = DB::select('select * from listing where userid = ?', [Auth::user()->userid]);
+            return view('list', ['items' => $listing]);
+        }
+
     }
 
-
-    public function adminLogin()
+    public function dashboard()
     {
-        return view('home');
+        if (Auth::user()->type)
+        {
+            $listing = DB::select('select * from listing');
+            return view('dashboard', ['items' => $listing]);
+        }else
+        {
+            return redirect()->route('home');
+        }
     }
-    public function admin()
-    {
-        return view('admin');
-    }
+    
 }

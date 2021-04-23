@@ -33,12 +33,9 @@ Route::post('/newItem', [myController::class, 'show'])
         ->middleware('auth')
         ->name('newItem');
 
-Route::get('/admin', [myController::class, 'admin'])
-        ->name('admin');
-
-Route::post('/admin', [myController::class, 'adminLogin'])
+Route::get('/dashboard', [myController::class, 'dashboard'])
         ->middleware('auth')
-        ->name('admin');
+        ->name('dashboard');
 
 
 require __DIR__.'/auth.php';

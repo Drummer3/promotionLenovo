@@ -1,7 +1,6 @@
 require('./bootstrap');
 require('alpinejs');
-
-var x = document.getElementById("type");
+require('tablesorter/dist/js/jquery.tablesorter');
 
 function notebook()
 {
@@ -25,20 +24,28 @@ function service()
     $('.service').show();
 }
 
-
-x.onchange = function()
+if ($('#type').length )
 {
-    switch(x.value) {
-        case 'notebook':
-            notebook();
-            break;
-        case 'tablet':
-            tablet();
-            break;
-        case 'warranty':
-            service();
-            break;
-        default:
-            // code block
-    } 
-};
+    var x = document.getElementById('type');
+    x.onchange = function()
+    {
+        switch(x.value) 
+        {
+            case 'notebook':
+                notebook();
+                break;
+            case 'tablet':
+                tablet();
+                break;
+            case 'warranty':
+                service();
+                break;
+            default:
+                    // code block
+        } 
+    };
+}
+
+$(function() {
+    $("#myTable").tablesorter();
+});

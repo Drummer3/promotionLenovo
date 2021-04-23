@@ -10,7 +10,7 @@ body {
 .myButton {
     filter: drop-shadow(0.4rem 0.4rem 0rem #991b1b);
     transition: 0.1s;
-    transition-timing-function: linear;
+    transition-timing-function: ease-in-out;
 }
 
 .myButton:hover {
