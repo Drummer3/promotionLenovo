@@ -23,7 +23,13 @@
         @if (Route::has('login'))
         <div style="height: 100%; align-items: center; justify-content: center; display: flex;">
             @auth
-            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ url('/home') }} '">Home</x-button>
+            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ url('/home') }} '">
+                @if(Auth::user()->type)
+                    Dashboard
+                @else
+                    Home
+                @endif
+            </x-button>
             @else
             <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ route('login') }} '">Log In</x-button>
 

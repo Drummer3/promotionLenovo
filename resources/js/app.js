@@ -1,36 +1,29 @@
 require('./bootstrap');
 require('alpinejs');
-require('tablesorter/dist/js/jquery.tablesorter');
 
-function notebook()
-{
+function notebook() {
     $('.notebook').show();
     $('.tablet').hide();
     $('.service').hide();
 };
 
 
-function tablet()
-{
+function tablet() {
     $('.notebook').hide();
     $('.tablet').show();
     $('.service').hide();
 };
 
-function service()
-{
+function service() {
     $('.notebook').hide();
     $('.tablet').hide();
     $('.service').show();
 }
 
-if ($('#type').length )
-{
+if ($('#type').length) {
     var x = document.getElementById('type');
-    x.onchange = function()
-    {
-        switch(x.value) 
-        {
+    x.onchange = function () {
+        switch (x.value) {
             case 'notebook':
                 notebook();
                 break;
@@ -41,11 +34,7 @@ if ($('#type').length )
                 service();
                 break;
             default:
-                    // code block
-        } 
+            // code block
+        }
     };
 }
-
-$(function() {
-    $("#myTable").tablesorter();
-});
