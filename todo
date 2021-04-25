@@ -9,4 +9,25 @@
 [x] admin sorter response
 [x] admin column filter naming
 [x] confirm deleting
+[x] submit success message 
+
+
+[x] category instead of type
+[ category
+    [x] notebook: family{ideapad, legion, thinkpad, yoga, v series} - sn - mtm
+    [x] pc: sn - mtm
+    [x] monotor: mtm - sn
+    [x] tablet: sn - mtm
+    [x] accessory: type - mtm
+    [x] service: 
+]
+[x] input types {
+    [x] sn
+    [x] mtm
+    [x] type
+    [x] family
+}
+[x] changed listing page
+    [ ] hide if category doesn't have any listing (?)
+[ ] gamerules
 [ ] deleting or hidden

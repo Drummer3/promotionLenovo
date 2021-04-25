@@ -37,5 +37,9 @@ Route::get('/dashboard', [myController::class, 'dashboard'])
         ->middleware('auth')
         ->name('dashboard');
 
+Route::get('adaptive/{cat}', function($cat){
+        return View::make('components.'.$cat)->render();
+});
+
 
 require __DIR__.'/auth.php';

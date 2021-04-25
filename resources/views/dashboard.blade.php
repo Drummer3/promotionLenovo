@@ -1,22 +1,22 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex flex-wrap pb-4 md:justify-start justify-center">
+                <div>
+                    <x-input type="text" name="Seach" placeholder="Seach" id="myInputTextField" />
+                </div>
+                <div class='px-4'>
+                    <x-button class="h-full" id="clearer"> Reset </x-button>
+                </div>
+                <div class='self-center text-gray-50'>
+                    <p id="rowCounter"></p>
+                </div>
+            </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="flex pb-4">
-                                    <div>
-                                        <x-input type="text" name="Seach" placeholder="Seach" id="myInputTextField" />
-                                    </div>
-                                    <div>
-                                        <x-button class="h-full" id="clearer"> Reset </x-button>
-                                    </div>
-                                    <div class='self-center'>
-                                        <p id="rowCounter"></p>
-                                    </div>
-                                </div>
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                     <table id="myTable" class="tablesorter min-w-full divide-y divide-gray-200">
                                         <thead class="bg-red-300">
@@ -39,7 +39,7 @@
                                                 </th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-50 uppercase tracking-wider hover:bg-red-400 focus:bg-red-500">
-                                                    Type
+                                                    Category
                                                 </th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-50 uppercase tracking-wider hover:bg-red-400 focus:bg-red-500">
@@ -74,7 +74,7 @@
                                                     {{ $item->branch }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                    {{ $item->type }}
+                                                    {{ $item->category }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                     {{ $item->model }}
@@ -112,7 +112,7 @@
                                             @endforeach
                                         </tbody>
                                         <script>
-                                        
+
                                         </script>
                                     </table>
                                 </div>

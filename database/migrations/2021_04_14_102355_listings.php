@@ -20,10 +20,11 @@ class Listings extends Migration
             $table->string('name');
             $table->string('shop');
             $table->string('branch');
-            $table->string('type');
-            $table->string('model');
-            $table->string('sn');
+            $table->string('category');
+            $table->string('sn')->nullable();
             $table->string('mtm');
+            $table->string('type')->nullable();
+            $table->string('family')->nullable();
             $table->timestamps();
         });
     }

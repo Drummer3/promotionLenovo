@@ -15,22 +15,24 @@ class myController extends Controller
     public function show(Request $request)
     {
         $validated = $request->validate([
-            'type' => 'required|string|max:255',
-            'model' => 'string|max:255',
+            'category' => 'required|string|max:255',
+            'type' => 'string|max:255',
             'sn' => 'string|unique:listing|min:10|max:255',
             'mtm' => 'string|max:255',
+            'family' => 'string|max:255',
         ]);
 
         $userid = Auth::user()->userid;
         $name = Auth::user()->name;
         $shop = Auth::user()->shop;
         $branch = Auth::user()->branch;
-        $type = $request->type;
-        $model = $request->model;
-        $sn = $request['sn'];
+        $category = $request->category;
+        $family = $request->family;
+        $sn = $request->sn;
         $mtm = $request->mtm;
-        DB::insert('insert into listing (userid, name, shop, branch, type, model, sn, mtm) values (?, ?, ?, ?, ?, ?, ?, ?)', [$userid, $name, $shop, $branch, $type, $model, $sn, $mtm]);
-        return redirect()->route('home');
+        $type = $request->type;
+        DB::insert('insert into listing (userid, name, shop, branch, category, family, sn, mtm, type) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', [$userid, $name, $shop, $branch, $category, $family, $sn, $mtm, $type]);
+        return redirect()->route('home')->with('success', 1);
     }
 
     public function home()
@@ -57,8 +59,13 @@ class myController extends Controller
             return redirect()->route('dashboard');
         }else
         {
-            $listing = DB::select('select * from listing where userid = ?', [Auth::user()->userid]);
-            return view('list', ['items' => $listing]);
+            $notebook = DB::select('select id, userid, family, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'notebook']);
+            $pc = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'pc']);
+            $monitor = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'monitor']);
+            $tablet = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'tablet']);
+            $accessory = DB::select('select id, userid, type, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'accessory']);
+            $service = DB::select('select id, userid, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'service']);    
+            return view('list', ['notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$accessory]);
         }
 
     }
