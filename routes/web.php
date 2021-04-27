@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\myController;
+use Illuminate\Support\Facades\View;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,10 @@ Route::get('/removeitem/{userid}/{itemid}', [myController::class, 'remove'])
         ->middleware('auth')
         ->name('remove');
 
+Route::get('/recoveritem/{userid}/{itemid}', [myController::class, 'recover'])
+        ->middleware('auth')
+        ->name('recover');
+
 Route::post('/newItem', [myController::class, 'show'])
         ->middleware('auth')
         ->name('newItem');
@@ -36,6 +41,10 @@ Route::post('/newItem', [myController::class, 'show'])
 Route::get('/dashboard', [myController::class, 'dashboard'])
         ->middleware('auth')
         ->name('dashboard');
+
+Route::get('/deleted', [myController::class, 'deleted'])
+        ->middleware('auth')
+        ->name('deleted');
 
 Route::get('adaptive/{cat}', function($cat){
         return View::make('components.'.$cat)->render();

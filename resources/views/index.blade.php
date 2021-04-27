@@ -15,7 +15,7 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
 </head>
 
 <body style="height: 100%;">
@@ -23,7 +23,8 @@
         @if (Route::has('login'))
         <div style="height: 100%; align-items: center; justify-content: center; display: flex;">
             @auth
-            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ url('/home') }} '">
+            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                onclick="location.href= &quot; {{ route('home') }} &quot;">
                 @if(Auth::user()->type)
                     Dashboard
                 @else
@@ -31,12 +32,10 @@
                 @endif
             </x-button>
             @else
-            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ route('login') }} '">Log In</x-button>
-
-            @if (Route::has('register'))
-            <x-button class="myButton m-2 dark:hover:bg-red-300" style="padding: 2rem 3rem" onclick="location.href=' {{ route('register') }} '">Register</x-button>
-
-            @endif
+            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                onclick="location.href='{{ route('login') }}';">Log In</x-button>
+            <x-button class="myButton m-2 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                onclick="location.href='{{ route('register') }}'">Register</x-button>
             @endauth
         </div>
         @endif

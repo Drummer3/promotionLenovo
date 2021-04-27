@@ -21321,7 +21321,11 @@ $('input').on('keyup change', function () {
 $('#rowCounter').text("Found " + $('#tableBody tr').length + " matches");
 $('#clearer').on('click', function () {
   $('input').val(null).trigger('change');
-}); // MODAL
+}); // RECOVER
+
+$('.recoverButton').on('click', function (e) {
+  location.href = '/recoveritem/' + e.currentTarget.id;
+}); // DELETE
 
 $('.deleteButton').on('click', function (e) {
   deletingid = e.currentTarget.id;

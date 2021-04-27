@@ -13,21 +13,19 @@
 
 
 [x] category instead of type
-[ category
+[x] category
     [x] notebook: family{ideapad, legion, thinkpad, yoga, v series} - sn - mtm
     [x] pc: sn - mtm
     [x] monotor: mtm - sn
     [x] tablet: sn - mtm
     [x] accessory: type - mtm
-    [x] service: 
-]
+    [x] service: ]
 [x] input types {
     [x] sn
     [x] mtm
     [x] type
-    [x] family
-}
+    [x] family}
 [x] changed listing page
-    [ ] hide if category doesn't have any listing (?)
+    [ x hide if category doesn't have any listing (?)
+[x] deleting or hidden
 [ ] gamerules
-[ ] deleting or hidden

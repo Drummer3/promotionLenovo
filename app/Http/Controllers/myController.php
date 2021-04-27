@@ -48,8 +48,20 @@ class myController extends Controller
 
     public function remove($userid, $itemid)
     {
-        DB::delete('delete from listing where userid = :userid and id = :id', ['userid' => $userid, 'id' =>$itemid]);
-        return redirect()->route('list');
+        if((Auth::user()->userid == $userid) || (Auth::user()->type))
+        {
+            DB::update('update listing set hidden=1 where id = :id', ['id' =>$itemid]);
+        }
+        return redirect()->route('dashboard');
+    }
+
+    public function recover($userid, $itemid)
+    {
+        if((Auth::user()->userid == $userid) || (Auth::user()->type))
+        {
+            DB::update('update listing set hidden=0 where id = :id', ['id' =>$itemid]);
+        }
+        return redirect()->route('deleted');
     }
 
     public function listing()
@@ -59,13 +71,13 @@ class myController extends Controller
             return redirect()->route('dashboard');
         }else
         {
-            $notebook = DB::select('select id, userid, family, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'notebook']);
-            $pc = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'pc']);
-            $monitor = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'monitor']);
-            $tablet = DB::select('select id, userid, sn, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'tablet']);
-            $accessory = DB::select('select id, userid, type, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'accessory']);
-            $service = DB::select('select id, userid, mtm from listing where userid=? and category=?', [Auth::user()->userid, 'service']);    
-            return view('list', ['notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$accessory]);
+            $notebook = DB::select('select id, userid, family, sn, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'notebook']);
+            $pc = DB::select('select id, userid, sn, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'pc']);
+            $monitor = DB::select('select id, userid, sn, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'monitor']);
+            $tablet = DB::select('select id, userid, sn, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'tablet']);
+            $accessory = DB::select('select id, userid, type, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'accessory']);
+            $service = DB::select('select id, userid, mtm from listing where userid=? and category=? and hidden=0', [Auth::user()->userid, 'service']);    
+            return view('list', ['notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$service]);
         }
 
     }
@@ -74,8 +86,20 @@ class myController extends Controller
     {
         if (Auth::user()->type)
         {
-            $listing = DB::select('select * from listing');
+            $listing = DB::select('select * from listing where hidden=0');
             return view('dashboard', ['items' => $listing]);
+        }else
+        {
+            return redirect()->route('home');
+        }
+    }
+
+    public function deleted()
+    {
+        if (Auth::user()->type)
+        {
+            $listing = DB::select('select * from listing where hidden=1');
+            return view('deleted', ['items' => $listing]);
         }else
         {
             return redirect()->route('home');
