@@ -2,7 +2,7 @@
     <x-label for="type" :value="__('Type')" />
     <select id="type" name="type" required
         class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
-        <option selected disabled>-- Select Type --</option>
+        <option></option>
         <option value="mouse">Mouse</option>
         <option value="keyboard">Keyboard</option>
     </select>

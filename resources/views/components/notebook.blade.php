@@ -2,7 +2,7 @@
     <x-label for="family" :value="__('Family')" />
     <select id="family" name="family" required
         class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
-        <option selected disabled>-- Select Family --</option>
+        <option></option>
         <option value="IdeaPad">IdeaPad</option>
         <option value="Legion">Legion</option>
         <option value="Thinkpad">ThinkPad</option>
