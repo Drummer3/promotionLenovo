@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>გათამაშება 🎉</title>
+    <title>{{ config('app.name', 'გათამაშება 🎉') }}</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -18,25 +18,27 @@
 
 </head>
 
-<body style="height: 100%;">
-    <div style="height: 100%;">
+<body class="h-full">
+    <div class="h-full">
         @if (Route::has('login'))
-        <div style="height: 100%; align-items: center; justify-content: center; display: flex;">
-            @auth
-            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
-                onclick="location.href= &quot; {{ route('home') }} &quot;">
-                @if(Auth::user()->type)
+        <div class="flex flex-col h-full items-center justify-center">
+            <div class="flex flex-col sm:flex-row">
+                @auth
+                <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                    onclick="location.href= &quot; {{ route('home') }} &quot;">
+                    @if(Auth::user()->type)
                     Dashboard
-                @else
+                    @else
                     Home
-                @endif
-            </x-button>
-            @else
-            <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
-                onclick="location.href='{{ route('login') }}';">Log In</x-button>
-            <x-button class="myButton m-2 dark:hover:bg-red-300" style="padding: 2rem 3rem"
-                onclick="location.href='{{ route('register') }}'">Register</x-button>
-            @endauth
+                    @endif
+                </x-button>
+                @else
+                <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                    onclick="location.href='{{ route('login') }}';">Log In</x-button>
+                <x-button class="myButton m-2 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                    onclick="location.href='{{ route('register') }}'">Register</x-button>
+                @endauth
+            </div>
         </div>
         @endif
     </div>

@@ -79,6 +79,9 @@
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('deleted')" :active="request()->routeIs('deleted')">
+                    {{ __('Deleted') }}
+                </x-responsive-nav-link>
             @else
                 <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                     {{ __('New Item') }}

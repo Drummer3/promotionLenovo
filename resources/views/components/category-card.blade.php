@@ -1,7 +1,7 @@
-@if($category)
+@if( count($category) )
 <div class="max-w-7xl mx-auto pb-4 sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-0 bg-white border-b border-gray-200 sm:p-4">
+        <div class="p-0 bg-white border-b border-gray-200 sm:p-4 sm:pt-0">
             <p class="text-2xl text-center py-2">
                 {{ $name }}
             </p>
