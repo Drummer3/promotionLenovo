@@ -27,5 +27,4 @@
             </div>
         </div>
     </div>
-    <x-modal class="hidden" id="modal" />
 </x-app-layout>

@@ -34,6 +34,10 @@ Route::get('/recoveritem/{userid}/{itemid}', [myController::class, 'recover'])
         ->middleware('auth')
         ->name('recover');
 
+Route::get('/modal/{type}/{userid}/{id}', [myController::class, 'modal'])
+        ->middleware('auth')
+        ->name('modal');
+
 Route::post('/newItem', [myController::class, 'show'])
         ->middleware('auth')
         ->name('newItem');

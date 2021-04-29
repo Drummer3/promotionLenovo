@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 class myController extends Controller
 {
@@ -76,6 +75,13 @@ class myController extends Controller
                     ->update(['hidden'=>0]);
         }
         return redirect()->route('deleted');
+    }
+
+    public function modal($type, $userid, $id)
+    {
+        return View::make('components.modal.'.$type, ['userid' =>$userid,'id' => $id])
+                        ->render();
+
     }
 
     public function listing()

@@ -42,19 +42,21 @@ $('#clearer').on('click', function () {
     $('input').val(null).trigger('change');
 });
 
-// RECOVER
-$('.recoverButton').on('click', function(e) {
-    location.href = '/recoveritem/' + e.currentTarget.id;
-});
-
-// DELETE
 $('.deleteButton').on('click', function (e) {
     deletingid = e.currentTarget.id;
-    $('#modal').show();
+    $.get(
+        'modal/delete/'+deletingid,
+        function(data){
+            $('body').append(data);
+        }    
+    );
 });
-$('#modal-delete').on('click', function () {
-    location.href = '/removeitem/' + deletingid;
-});
-$('#modal-cancel').on('click', function () {
-    $('#modal').hide()
+$('.recoverButton').on('click', function (e) {
+    recoverid = e.currentTarget.id;
+    $.get(
+        'modal/recover/'+recoverid,
+        function(data){
+            $('body').append(data);
+        }    
+    );
 });

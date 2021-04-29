@@ -1,5 +1,5 @@
 <td class="whitespace-nowrap justify-items-center text-sm">
-    <a href="/removeitem/{{$item->userid}}/{{$item->id}}" class="text-red-600 hover:text-red-900"><svg
+    <a id="{{$item->userid}}/{{$item->id}}" class="deleteButton text-red-600 hover:text-red-900"><svg
             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-2" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

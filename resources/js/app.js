@@ -14,3 +14,14 @@ if ($('#category').length) {
         );
     })
 }
+
+
+$('.deleteButton').on('click', function (e) {
+    deletingid = e.currentTarget.id;
+    $.get(
+        'modal/delete/'+deletingid,
+        function(data){
+            $('body').append(data);
+        }    
+    );
+});

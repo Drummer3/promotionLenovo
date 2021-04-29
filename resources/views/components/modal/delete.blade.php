@@ -1,5 +1,5 @@
-<div {{ $attributes->merge(['class' => 'fixed z-10 inset-0 overflow-y-auto']) }} aria-labelledby="modal-title"
-    role="dialog" aria-modal="true">
+<div id="modal" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
     <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="button" id="modal-delete"
+                <button type="button" id="modal-accept"
                     class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
                     Delete
                 </button>
@@ -39,4 +39,12 @@
             </div>
         </div>
     </div>
+    <script>
+    $('#modal-accept').on('click', function() {
+        location.href = '/removeitem/{!! $userid !!}/{!! $id !!}';
+    });
+    $('#modal-cancel').on('click', function() {
+        $('#modal').remove()
+    });
+    </script>
 </div>
