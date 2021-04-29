@@ -20,12 +20,13 @@
     [x] tablet: sn - mtm
     [x] accessory: type - mtm
     [x] service: ]
-[x] input types {
+[x] input types
     [x] sn
     [x] mtm
     [x] type
-    [x] family}
+    [x] family
 [x] changed listing page
-    [ x hide if category doesn't have any listing (?)
+    [x] hide if category doesn't have any listing (?)
 [x] deleting or hidden
-[ ] gamerules
+[x] gamerules
+[x] modals
