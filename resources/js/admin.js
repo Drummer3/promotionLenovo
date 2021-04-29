@@ -22,6 +22,9 @@ $('#myTable thead tr:eq(1) th').each(function (i) {
     });
 });
 var table = $('#myTable').DataTable({
+    language: {
+        "emptyTable": "Empty :("
+    },
     orderCellsTop: true,
     fixedHeader: true,
     paging: false,
