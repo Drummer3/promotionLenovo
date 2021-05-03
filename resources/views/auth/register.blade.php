@@ -31,8 +31,14 @@
                 <x-label for="shop" :value="__('Store Chain')" />
 
                 <select id="shop" name="shop" class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+                    <option></option>
                     <option value="alta">Alta</option>
-                    <option value="ee">Elit Electronics</option>
+                    <option value="elitElectronics">Elit Electronics</option>
+                    <option value="zoommer">Zoommer</option>
+                    <option value="beko">Beko</option>
+                    <option value="megatechnica">Megatechnica</option>
+                    <option value="metromart">Metromart</option>
+                    <option value="pcshop">PC Shop</option>
                 </select>
             </div>
 
@@ -41,8 +47,7 @@
                 <x-label for="branch" :value="__('Store branch')" />
 
                 <select id="branch" name="branch" class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
-                    <option value="saburtalo_cityMall">Saburtalo, City Mall</option>
-                    <option value="ee">Elit Electronics</option>
+
                 </select>
             </div>
 

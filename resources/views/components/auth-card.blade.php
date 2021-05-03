@@ -1,13 +1,14 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-    <div>
-        {{ $logo }}
-    </div>
+<div class="min-h-screen flex justify-evenly flex-col md:flex-row items-center pt-6">
+    <div class="flex flex-col w-auto">
+        <div class="max-w-md">
+            {{ $logo }}
+        </div>
 
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-        {{ $slot }}
+        <div class="mt-6 px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg max-w-md">
+            {{ $slot }}
+        </div>
     </div>
-
-    <div class="w-full">
+    <div class="">
         <x-rules />
     </div>
 </div>
