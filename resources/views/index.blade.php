@@ -22,9 +22,10 @@
     <div class="h-full">
         @if (Route::has('login'))
         <div class="flex flex-col h-full items-center justify-center">
+            {{-- <x-application-logo class="text-gray-100 text-3xl h-16 px-8 rounded-md" /> --}}
             <div class="flex flex-col sm:flex-row">
                 @auth
-                <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                <x-button class="myButton m-2 py-8 px-12 dark:hover:bg-red-300"
                     onclick="location.href= &quot; {{ route('home') }} &quot;">
                     @if(Auth::user()->type)
                     Dashboard
@@ -33,9 +34,9 @@
                     @endif
                 </x-button>
                 @else
-                <x-button class="myButton m-2 p-4 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                <x-button class="myButton mb-12 sm:mb-0 sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
                     onclick="location.href='{{ route('login') }}';">Log In</x-button>
-                <x-button class="myButton m-2 dark:hover:bg-red-300" style="padding: 2rem 3rem"
+                <x-button class="myButton sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
                     onclick="location.href='{{ route('register') }}'">Register</x-button>
                 @endauth
             </div>

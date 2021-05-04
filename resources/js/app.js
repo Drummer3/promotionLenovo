@@ -384,8 +384,8 @@ let shops = {
 }
 $('#shop').on('change', function(e){
     $('#branch').html('');
+    $('#branch').append($('<option />'));
     var list = shops[e.target.value];
-    $('#')
     $.each(list, function(index,value){
         $('#branch').append(
             $('<option />').val(value.value).text(value.key)
