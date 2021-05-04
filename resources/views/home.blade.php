@@ -8,12 +8,7 @@
                 <div class="p-6 pt-4 bg-white border-b border-gray-200">
                     <div class="flex justify-center sm:hidden">
                         <p class="text-center text-xl font-bold">
-                            @if(request()->routeIs('home'))
                             Adding Product
-                            @endif
-                            @if(request()->routeIs('list'))
-                            My Product
-                            @endif
                         </p>
                     </div>
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
