@@ -3,6 +3,8 @@
     <x-input type="text" name="mtm" id="mtm" placeholder="e.g 20TD0047RK" maxlength="10" minlength='10' required />
 </div>
 
+<input type="hidden" name="price" value="777777">
+
 <div class='text-gray-700'>
     <x-button class='block w-full justify-center'>Submit</x-button>
 </div>

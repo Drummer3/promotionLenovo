@@ -25,6 +25,7 @@ class Listings extends Migration
             $table->string('mtm');
             $table->string('type')->nullable();
             $table->string('family')->nullable();
+            $table->float('price', 8, 2);
             $table->boolean('hidden')->default(0);
             $table->timestamps();
         });

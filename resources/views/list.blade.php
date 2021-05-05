@@ -1,5 +1,14 @@
 <x-app-layout>
-    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <div class="py-4">
+        <div class="max-w-7xl mx-auto pb-4 sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <p class="text-xl text-center py-2">
+                    My tikets: {{ $tikets }}
+                </p>
+            </div>
+        </div>
+    </div>
+
     <div class="py-12">
         <x-category-card :category='$notebook'>
             <x-slot name="name">Notebook</x-slot>
@@ -7,21 +16,25 @@
                 <x-category-col :cat="'Family'" />
                 <x-category-col :cat="'Serial Number'" />
                 <x-category-col :cat="'MTM'" />
+                <x-category-col :cat="'Price'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($notebook as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->family}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->sn}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($notebook as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->family }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->sn }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->price }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>
@@ -31,18 +44,22 @@
             <x-slot name="columnNames">
                 <x-category-col :cat="'Serial Number'" />
                 <x-category-col :cat="'MTM'" />
+                <x-category-col :cat="'Price'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($pc as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->sn}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($pc as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->sn }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->price }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>
@@ -52,18 +69,22 @@
             <x-slot name="columnNames">
                 <x-category-col :cat="'Serial Number'" />
                 <x-category-col :cat="'MTM'" />
+                <x-category-col :cat="'Price'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($monitor as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->sn}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($monitor as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->sn }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->price }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>
@@ -73,18 +94,22 @@
             <x-slot name="columnNames">
                 <x-category-col :cat="'Serial Number'" />
                 <x-category-col :cat="'MTM'" />
+                <x-category-col :cat="'Price'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($tablet as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->sn}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($tablet as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->sn }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->price }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>
@@ -94,18 +119,22 @@
             <x-slot name="columnNames">
                 <x-category-col :cat="'Type'" />
                 <x-category-col :cat="'MTM'" />
+                <x-category-col :cat="'Price'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($accessory as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->type}}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($accessory as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->type }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->price }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>
@@ -116,13 +145,13 @@
                 <x-category-col :cat="'MTM'" />
             </x-slot>
             <x-slot name="rows">
-                @foreach($service as $item)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$item->mtm}}
-                    </td>
-                    <x-listing-delete :item="$item"/>
-                </tr>
+                @foreach ($service as $item)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {{ $item->mtm }}
+                        </td>
+                        <x-listing-delete :item="$item" />
+                    </tr>
                 @endforeach
             </x-slot>
         </x-category-card>

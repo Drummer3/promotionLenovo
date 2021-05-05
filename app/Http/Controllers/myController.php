@@ -19,6 +19,7 @@ class myController extends Controller
             'sn' => 'string|unique:listing|min:10|max:255',
             'mtm' => 'string|max:255',
             'family' => 'string|max:255',
+            'price' => 'required|numeric',
         ]);
 
         $userid = Auth::user()->userid;
@@ -30,6 +31,8 @@ class myController extends Controller
         $sn = $request->sn;
         $mtm = $request->mtm;
         $type = $request->type;
+        $price = $request->price;
+
         DB:: table('listing')->insert([
             'userid' => $userid,
             'name' => $name,
@@ -39,7 +42,8 @@ class myController extends Controller
             'family' => $family,
             'sn' => $sn,
             'mtm' => $mtm,
-            'type' => $type
+            'type' => $type,
+            'price' => $price,
         ]);
         return redirect()->route('home')->with('success', 1);
     }
@@ -90,37 +94,50 @@ class myController extends Controller
         {
             return redirect()->route('dashboard');
         }else
-        {            
+        {
+            $tikets = 0;
+            $tk = DB::table('listing')
+                        ->select('price')
+                        ->where('userid', Auth::user()->userid)
+                        ->where('hidden', 0)
+                        ->get();
+            foreach($tk as $each)
+            {
+                if($each->price > 0 and $each->price <= 1500){$tikets += 1;}
+                elseif($each->price <= 4000){$tikets += 2;}
+                elseif($each->price > 4000 and $each->price < 24999){$tikets += 3;}
+                elseif($each->price = 777777){$tikets += 5;}
+            }
             $notebook = DB::table('listing')
-                            ->select('id', 'userid', 'family', 'sn', 'mtm')
+                            ->select('id', 'userid', 'family', 'sn', 'mtm', 'price')
                             ->where('userid', Auth::user()->userid)
                             ->where('category', 'notebook')
                             ->where('hidden', 0)
                             ->get();
             
             $pc = DB::table('listing')
-                            ->select('id', 'userid', 'sn', 'mtm')
+                            ->select('id', 'userid', 'sn', 'mtm', 'price')
                             ->where('userid', Auth::user()->userid)
                             ->where('category', 'pc')
                             ->where('hidden', 0)
                             ->get();
 
             $monitor = DB::table('listing')
-                            ->select('id', 'userid', 'sn', 'mtm')
+                            ->select('id', 'userid', 'sn', 'mtm', 'price')
                             ->where('userid', Auth::user()->userid)
                             ->where('category', 'monitor')
                             ->where('hidden', 0)
                             ->get();
             
             $tablet = DB::table('listing')
-                            ->select('id', 'userid', 'sn', 'mtm')
+                            ->select('id', 'userid', 'sn', 'mtm', 'price')
                             ->where('userid', Auth::user()->userid)
                             ->where('category', 'tablet')
                             ->where('hidden', 0)
                             ->get();
 
             $accessory = DB::table('listing')
-                            ->select('id', 'userid', 'type', 'mtm')
+                            ->select('id', 'userid', 'type', 'mtm', 'price')
                             ->where('userid', Auth::user()->userid)
                             ->where('category', 'accessory')
                             ->where('hidden', 0)
@@ -133,7 +150,7 @@ class myController extends Controller
                             ->where('hidden', 0)
                             ->get();
 
-            return view('list', ['notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$service]);
+            return view('list', ['tikets'=>$tikets, 'notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$service]);
         }
 
     }
