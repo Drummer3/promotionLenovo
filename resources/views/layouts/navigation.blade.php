@@ -1,12 +1,12 @@
 <nav x-data="{ open: false }" class="bg-white border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto pr-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex">
+                <div class="flex max-w-xs">
                     <a href="/" class="h-full">
-                        <x-application-logo class="text-gray-100 h-full text-3xl px-8" />
+                        <x-application-logo class="h-full" />
                     </a>
                 </div>
 
