@@ -18,30 +18,32 @@
 
 </head>
 
-<body class="h-full">
-    <div class="h-full">
-        @if (Route::has('login'))
-        <div class="flex flex-col h-full items-center justify-center">
-            {{-- <x-application-logo class="text-gray-100 text-3xl h-16 px-8 rounded-md" /> --}}
+<body>
+    @if (Route::has('login'))
+        <div class="flex flex-col h-screen items-center justify-center">
             <div class="flex flex-col sm:flex-row">
                 @auth
-                <x-button class="myButton m-2 py-8 px-12 dark:hover:bg-red-300"
-                    onclick="location.href= &quot; {{ route('home') }} &quot;">
-                    @if(Auth::user()->type)
-                    Dashboard
-                    @else
-                    Home
-                    @endif
-                </x-button>
+                    <x-button class="myButton m-2 py-8 px-12 dark:hover:bg-red-300"
+                        onclick="location.href= &quot; {{ route('home') }} &quot;">
+                        @if (Auth::user()->type)
+                            Dashboard
+                        @else
+                            Home
+                        @endif
+                    </x-button>
                 @else
-                <x-button class="myButton mb-12 sm:mb-0 sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
-                    onclick="location.href='{{ route('login') }}';">Log In</x-button>
-                <x-button class="myButton sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
-                    onclick="location.href='{{ route('register') }}'">Register</x-button>
+                    <x-button class="myButton mb-12 sm:mb-0 sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
+                        onclick="location.href='{{ route('login') }}';">Log In</x-button>
+                    <x-button class="myButton sm:mx-6 py-8 px-12 dark:hover:bg-red-300"
+                        onclick="location.href='{{ route('register') }}'">Register</x-button>
                 @endauth
             </div>
         </div>
-        @endif
+    @endif
+    <div class="fixed bottom-28 right-0">
+        <a href="/">
+            <img src="{{ asset('images/Logo.png') }}" alt="logo" class="transform -rotate-90 translate-x-12 h-12">
+        </a>
     </div>
 </body>
 
