@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex max-w-xs">
+                <div class="flex w-60">
                     <a href="/" class="h-full">
                         <x-application-logo class="h-full" />
                     </a>

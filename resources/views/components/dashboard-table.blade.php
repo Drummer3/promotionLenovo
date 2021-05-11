@@ -10,6 +10,8 @@
             <x-category-col class="hover:bg-red-600 cursor-pointer" :cat="'Type'" />
             <x-category-col class="hover:bg-red-600 cursor-pointer" :cat="'Serial Number'" />
             <x-category-col class="hover:bg-red-600 cursor-pointer" :cat="'Mtm'" />
+            <x-category-col class="hover:bg-red-600 cursor-pointer" :cat="'Price'" />
+            <x-category-col class="hover:bg-red-600 cursor-pointer" :cat="'Tikets'" />
             <th scope="col" class="w-4 relative deleteCol">
                 <span class="sr-only">D</span>
             </th>
@@ -45,6 +47,19 @@
             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                 {{ $item->mtm }}
             </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                {{ $item->price }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 tickets">
+                @php
+                    $tikets=0;
+                    if($item->price > 0 and $item->price <= 1500){$tikets += 1;}
+                    elseif($item->price <= 4000){$tikets += 2;}
+                    elseif($item->price > 4000 and $item->price < 24999){$tikets += 3;}
+                    elseif($item->price = 777777){$tikets += 5;}
+                @endphp
+                {{ $tikets }}
+            </td>
             <td class="whitespace-nowrap justify-items-center text-sm">
                 <a class="deleteButton text-red-600 hover:text-red-900" id="{{$item->userid}}/{{$item->id}}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -58,7 +73,4 @@
         </tr>
         @endforeach
     </tbody>
-    <script>
-
-    </script>
 </table>

@@ -1,8 +1,13 @@
 require('./bootstrap');
 require('alpinejs');
 
-var deletingid = '';
-// DASHBOARD TABLE
+
+
+
+
+// //////////////
+// TABLE!
+// //////////////
 $('#myTable thead tr').clone(true).appendTo('#myTable thead');
 $('#myTable thead tr:eq(1) th').removeClass();
 $('#myTable thead tr:eq(1) th').each(function (i) {
@@ -34,32 +39,66 @@ var table = $('#myTable').DataTable({
 $('#myTable_filter').remove();
 $('#myInputTextField').on('keyup change', function () {
     $('#myTable').DataTable().search($(this).val()).draw();
-})
-$('input').on('keyup change', function () {
-    $('#rowCounter').text("Found " + $('#tableBody tr')
-        .length + " matches");
 });
-$('#rowCounter').text("Found " + $('#tableBody tr').length +
-    " matches");
 $('#clearer').on('click', function () {
     $('input').val(null).trigger('change');
 });
+// //////////////
+// TABLE!
+// //////////////
 
+
+
+
+
+// //////////////
+// Counters!
+// //////////////
+$('#rowCounter').text("Found " + $('#tableBody tr').length + " matches");
+
+let ticketCounter = 0;
+$('.tickets').each(function () {
+    ticketCounter += parseFloat(this.innerText);
+});
+$('#ticketCounter').text("Tickets: " + ticketCounter);
+
+$('input').on('keyup change', function () {
+    $('#rowCounter').text("Found " + $('#tableBody tr').length + " matches");
+    let ticketCounter = 0;
+    $('.tickets').each(function () {
+        ticketCounter += parseFloat(this.innerText);
+    });
+    $('#ticketCounter').text("Tickets: " + ticketCounter);
+});
+// //////////////
+// Counters!
+// //////////////
+
+
+
+
+
+// //////////////
+// Modals!
+// //////////////
 $('.deleteButton').on('click', function (e) {
     deletingid = e.currentTarget.id;
     $.get(
-        'modal/delete/'+deletingid,
-        function(data){
+        'modal/delete/' + deletingid,
+        function (data) {
             $('body').append(data);
-        }    
+        }
     );
 });
 $('.recoverButton').on('click', function (e) {
     recoverid = e.currentTarget.id;
     $.get(
-        'modal/recover/'+recoverid,
-        function(data){
+        'modal/recover/' + recoverid,
+        function (data) {
             $('body').append(data);
-        }    
+        }
     );
 });
+// //////////////
+// Modals!
+// //////////////

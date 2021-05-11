@@ -10,6 +10,7 @@
             <x-category-col class="hover:bg-blue-700 cursor-pointer" :cat="'Type'" />
             <x-category-col class="hover:bg-blue-700 cursor-pointer" :cat="'Serial Number'" />
             <x-category-col class="hover:bg-blue-700 cursor-pointer" :cat="'Mtm'" />
+            <x-category-col class="hover:bg-blue-700 cursor-pointer" :cat="'Price'" />
             <th scope="col" class="w-4 relative deleteCol">
                 <span class="sr-only">D</span>
             </th>
@@ -44,6 +45,9 @@
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                 {{ $item->mtm }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                {{ $item->price }}
             </td>
             <td class="whitespace-nowrap justify-items-center text-sm">
                 <a class="recoverButton text-blue-600 hover:text-blue-900" id="{{$item->userid}}/{{$item->id}}">

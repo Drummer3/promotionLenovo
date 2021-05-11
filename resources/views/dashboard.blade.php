@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-wrap pb-4 md:justify-start justify-center">
                 <div>
                     <x-input type="text" name="Seach" placeholder="Seach" id="myInputTextField" />
@@ -10,6 +10,7 @@
                 </div>
                 <div class='self-center text-gray-50'>
                     <p id="rowCounter"></p>
+                    <p id="ticketCounter"></p>
                 </div>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
