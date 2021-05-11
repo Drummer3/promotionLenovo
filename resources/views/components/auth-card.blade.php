@@ -1,5 +1,5 @@
-<div class="min-h-screen flex justify-evenly flex-col md:flex-row items-center py-6">
-    <div class="flex flex-col w-auto">
+<div class="min-h-screen flex justify-evenly flex-col lg:flex-row items-center py-6">
+    <div class="flex flex-col w-96">
         <div class="max-w-md">
             {{ $logo }}
         </div>
@@ -8,7 +8,13 @@
             {{ $slot }}
         </div>
     </div>
-    <div class="max-w-sm sm:max-w-md">
+
+    @if (Request::is('login') || Request::is('register'))
+
+    <div class="max-w-sm lg:max-w-md w-96 lg:w-auto">
         <x-rules />
     </div>
+        
+    @endif
+
 </div>

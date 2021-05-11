@@ -1,11 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="text-gray-100 text-3xl h-16 px-8 rounded-md" />
-            </a>
         </x-slot>
-
+        <p class="text-center font-bold text-2xl mb-4">Register</p>
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
@@ -16,21 +13,31 @@
             <div>
                 <x-label for="name" :value="__('Full Name')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" placeholder=" " required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
+                    placeholder=" " required autofocus />
             </div>
 
-            <!-- Email Address -->
+            <!-- User ID -->
             <div class="mt-4">
                 <x-label for="userid" :value="__('User ID')" />
 
-                <x-input id="userid" class="block mt-1 w-full" type="text" name="userid" :value="old('userid')" required />
+                <x-input id="userid" class="block mt-1 w-full" type="text" name="userid" :value="old('userid')"
+                    required />
+            </div>
+
+            <!-- Number -->
+            <div class="mt-4">
+                <x-label for="number" :value="__('Number')" />
+
+                <x-input id="number" class="block mt-1 w-full" type="text" name="number" :value="old('number')" required />
             </div>
 
             <!-- Shop selector -->
             <div class="mt-4">
                 <x-label for="shop" :value="__('Store Chain')" />
 
-                <select id="shop" name="shop" class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+                <select id="shop" name="shop"
+                    class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
                     <option></option>
                     <option value="alta">Alta</option>
                     <option value="elitElectronics">Elit Electronics</option>
@@ -46,7 +53,8 @@
             <div class="mt-4">
                 <x-label for="branch" :value="__('Store branch')" />
 
-                <select id="branch" name="branch" class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+                <select id="branch" name="branch"
+                    class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
 
                 </select>
             </div>
@@ -55,19 +63,16 @@
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                    name="password_confirmation" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -81,4 +86,5 @@
             </div>
         </form>
     </x-auth-card>
+    <x-side-logo />
 </x-guest-layout>

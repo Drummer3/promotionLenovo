@@ -40,11 +40,7 @@
             </div>
         </div>
     @endif
-    <div class="fixed bottom-28 right-0">
-        <a href="/">
-            <img src="{{ asset('images/Logo.png') }}" alt="logo" class="transform -rotate-90 translate-x-12 h-12">
-        </a>
-    </div>
+    <x-side-logo />
 </body>
 
 </html>
