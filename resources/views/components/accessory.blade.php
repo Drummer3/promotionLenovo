@@ -1,7 +1,7 @@
 <div class='text-gray-700'>
     <x-label for="type" :value="__('Type')" />
     <select id="type" name="type" required
-        class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+        class="block w-full shadow-sm border-gray-300 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50">
         <option></option>
         <option value="mouse">Mouse</option>
         <option value="keyboard">Keyboard</option>

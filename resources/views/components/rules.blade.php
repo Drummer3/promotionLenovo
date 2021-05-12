@@ -1,5 +1,5 @@
 <div class="flex justify-center pb-4">
-    <div class="bg-white overflow-hidden shadow-sm rounded-lg w-full max-w-md mt-6 px-6 align-middle">
+    <div class="bg-white overflow-hidden shadow-md w-full max-w-md mt-6 px-6 align-middle">
         <div class="p-4 bg-white align-middle">
             <p class="text-center py-2 font-bold text-xl">
                 ლენოვოს გათამაშების პირობები:

@@ -35,7 +35,7 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox"
-                        class="rounded border-gray-300 text-red-600 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50"
+                        class="border-gray-300 shadow-sm"
                         name="remember" checked>
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
@@ -43,7 +43,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="text-xs" href="/forgot">Forgot Password?</a>
-                <x-button class="ml-3">
+                <x-button class="ml-3 hover:bg-gray-300">
                     {{ __('Log in') }}
                 </x-button>
             </div>

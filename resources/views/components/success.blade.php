@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between flex-wrap">
             <div class="w-0 flex-1 flex items-center">
-                <span class="flex p-2 rounded-lg bg-green-600">
+                <span class="flex p-2 bg-green-600">
                     <!-- Heroicon name: outline/speakerphone -->
                     <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" aria-hidden="true">
@@ -16,7 +16,7 @@
             </div>
             <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                 <button type="button" onclick="$('#success-message').hide()"
-                    class="-mr-1 flex p-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+                    class="-mr-1 flex p-2 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
                     <span class="sr-only">Dismiss</span>
                     <!-- Heroicon name: outline/x -->
                     <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

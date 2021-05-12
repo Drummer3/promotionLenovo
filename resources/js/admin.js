@@ -13,7 +13,7 @@ $('#myTable thead tr:eq(1) th').removeClass();
 $('#myTable thead tr:eq(1) th').each(function (i) {
     var title = $.trim($(this).text());
     $(this).html(
-        '<input class="block w-full rounded-md shadow-sm border-gray-300 focus:ring focus:ring-red-400 focus:ring-4" type="text" placeholder="' +
+        '<input class="block w-full shadow-sm border-gray-300 focus:ring focus:ring-red-400 focus:ring-4" type="text" placeholder="' +
         title + '" />'
     );
     $('input', this).on('keyup change', function () {

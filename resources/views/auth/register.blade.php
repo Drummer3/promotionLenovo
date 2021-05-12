@@ -37,7 +37,7 @@
                 <x-label for="shop" :value="__('Store Chain')" />
 
                 <select id="shop" name="shop"
-                    class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+                    class="block w-full shadow-sm border-gray-300 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50">
                     <option></option>
                     <option value="alta">Alta</option>
                     <option value="elitElectronics">Elit Electronics</option>
@@ -54,7 +54,7 @@
                 <x-label for="branch" :value="__('Store branch')" />
 
                 <select id="branch" name="branch"
-                    class="block w-full rounded-md shadow-sm border-gray-300 focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50">
+                    class="block w-full shadow-sm border-gray-300 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50">
 
                 </select>
             </div>
@@ -80,7 +80,7 @@
                     {{ __('Already Registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 hover:bg-gray-300">
                     {{ __('Register') }}
                 </x-button>
             </div>
