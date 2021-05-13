@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'bg-red-600  text-center']) }} >
+<div {{ $attributes->merge(['class' => '']) }} >
     <img src="{{ asset('images/Logo.png') }}" alt="Lenovo Logo" class="h-full inline-flex items-center">
 </div>
