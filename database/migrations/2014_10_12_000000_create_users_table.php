@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('branch');
             $table->string('password');
             $table->string('type')->nullable();
+            $table->string('number');
             $table->rememberToken();
             $table->timestamps();
         });

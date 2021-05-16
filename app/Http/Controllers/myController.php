@@ -13,11 +13,11 @@ class myController extends Controller
 
     public function show(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'category' => 'required|string|max:255',
             'type' => 'string|max:255',
-            'sn' => 'string|unique:listing|min:10|max:255',
-            'mtm' => 'string|max:255',
+            'sn' => 'string|unique:listing|max:255',
+            'mtm' => 'string|min:10',
             'family' => 'string|max:255',
             'price' => 'required|numeric',
         ]);
