@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="pt-4">
-        <div class="max-w-7xl mx-auto pb-4 sm:px-6 lg:px-8">
+    <div class="pt-6">
+        <div class="max-w-2xl mx-auto pb-4 sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm">
                 <p class="text-xl text-center py-2">
                     My tikets: {{ $tikets }}
@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="py-12">
+    <div class="py-6">
         <x-category-card :category='$notebook'>
             <x-slot name="name">Notebook</x-slot>
             <x-slot name="columnNames">

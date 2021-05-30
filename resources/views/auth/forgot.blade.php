@@ -26,7 +26,7 @@
 
             <!-- Phone Number -->
             <div class="mt-3">
-                <x-label for="number" :value="__('Number')" />
+                <x-label for="number" :value="__('Phone number')" />
 
                 <x-input id="number" class="block mt-1 w-full" type="text" name="number" :value="old('number')"
                     required placeholder="+995555123456" />
