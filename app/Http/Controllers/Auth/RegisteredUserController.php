@@ -35,7 +35,8 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'userid' => 'required|string|max:255|unique:users',
-            'number' => 'required|string|unique:users',
+            'number' => 'required|numeric|unique:users',
+            'email' => 'required|email|unique:users',
             'shop' => 'required|string',
             'branch' => 'required|string',
             'password' => 'required|string|confirmed|min:8',
@@ -45,6 +46,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'userid' => $request->userid,
             'number' => $request->number,
+            'email' => $request->email,
             'shop' => $request->shop,
             'branch' => $request->branch,
             'password' => Hash::make($request->password),

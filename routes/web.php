@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\myController;
-use App\Http\Controllers\ForgotUserController;
+
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 /*
 |--------------------------------------------------------------------------
@@ -55,16 +55,9 @@ Route::get('adaptive/{cat}', function ($cat) {
         return View::make('components.' . $cat)->render();
 });
 
-Route::get('/forgot', [ForgotUserController::class, 'load'])
-        ->middleware('guest')
-        ->name('forgotGET');
-
-Route::post('/forgot', [ForgotUserController::class, 'confirm'])
-        ->middleware('guest')
-        ->name('forgot');
-
-Route::post('update-password', [ForgotUserController::class, 'update'])
-        ->middleware('guest')
-        ->name('update-password');
-
+Route::get('rules', function () {
+        return view('rules');
+})
+        ->middleware('auth')
+        ->name('rules');
 require __DIR__ . '/auth.php';

@@ -6,7 +6,7 @@
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm">
                 <div class="p-6 pt-4 bg-white border-b border-gray-200">
-                    <div class="flex justify-center sm:hidden">
+                    <div class="flex justify-center">
                         <p class="text-center text-xl font-bold">
                             Adding Product
                         </p>

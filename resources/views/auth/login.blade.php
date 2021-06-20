@@ -1,10 +1,5 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            {{-- <a href="/" class='h-full'>
-                <x-application-logo class="text-gray-100 text-3xl h-16 px-8 rounded-md" />
-            </a> --}}
-        </x-slot>
         <p class="text-center font-bold text-2xl mb-4">Login</p>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -42,7 +37,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="text-xs" href="/forgot">Forgot Password?</a>
+                <a class="text-xs" href="/forgot-password">Forgot Password?</a>
                 <x-button class="ml-3 hover:bg-gray-300">
                     {{ __('Log in') }}
                 </x-button>

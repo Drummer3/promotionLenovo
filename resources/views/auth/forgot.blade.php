@@ -1,7 +1,5 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-        </x-slot>
 
         <p class="text-center font-bold text-2xl mb-4">Reset Password</p>
 

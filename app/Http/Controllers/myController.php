@@ -103,10 +103,11 @@ class myController extends Controller
                         ->get();
             foreach($tk as $each)
             {
-                if($each->price > 0 and $each->price <= 1500){$tikets += 1;}
-                elseif($each->price <= 4000){$tikets += 2;}
-                elseif($each->price > 4000 and $each->price < 24999){$tikets += 3;}
-                elseif($each->price = 777777){$tikets += 5;}
+                if($each->price > 0 and $each->price < 1500){$tikets += 1;}
+                elseif($each->price < 3000){$tikets += 2;}
+                elseif($each->price < 5000){$tikets += 3;}
+                elseif(777777 > $each->price && $each->price >= 5000){$tikets += 5;}
+                elseif($each->price == 777777){$tikets += 2;}
             }
             $notebook = DB::table('listing')
                             ->select('id', 'userid', 'family', 'sn', 'mtm', 'price')
