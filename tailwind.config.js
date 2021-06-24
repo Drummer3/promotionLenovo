@@ -12,7 +12,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Lato', ...defaultTheme.fontFamily.sans],
+                sans: ['Calibri', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: theme => ({
                 'hero-pattern': "url('/img/lenovo.png')",
