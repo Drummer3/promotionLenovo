@@ -40,7 +40,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="p-4 bg-white align-middle">
+            <div class="p-4 mb-8 bg-white align-middle">
                 <p class="text-center py-2 font-bold text-xl">
                     პრიზები:
                 </p>
