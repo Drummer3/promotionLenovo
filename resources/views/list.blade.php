@@ -3,7 +3,7 @@
         <div class="max-w-2xl mx-auto pb-4 sm:px-6 lg:px-8">
             <div class="bg-white bg-opacity-90 overflow-hidden shadow-sm">
                 <p class="text-xl text-center py-2">
-                    My tikets: {{ $tikets }}
+                    My tickets: {{ $tickets }}
                 </p>
             </div>
         </div>

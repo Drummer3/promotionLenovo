@@ -151,7 +151,7 @@ class myController extends Controller
                             ->where('hidden', 0)
                             ->get();
 
-            return view('list', ['tikets'=>$tikets, 'notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$service]);
+            return view('list', ['tickets'=>$tikets, 'notebook'=>$notebook, 'pc'=>$pc, 'monitor'=>$monitor, 'tablet'=>$tablet, 'accessory'=>$accessory, 'service'=>$service]);
         }
 
     }
