@@ -38,7 +38,7 @@
                 
                 <div class="flex flex-col sm:flex-row">
                     @auth
-                        <x-button class="text-sm border justify-center opacity-80 border-blue-900 m-2 py-6 px-12 text-blue-900 hover:bg-blue-300 bg-white"
+                        <x-button class="text-sm border justify-center opacity-90 border-blue-900 m-2 py-6 px-12 text-blue-900 hover:bg-blue-300 bg-white"
                             onclick="location.href= &quot; {{ route('home') }} &quot;">
                             @if (Auth::user()->type)
                                 Dashboard

@@ -2,7 +2,7 @@
     {{-- <x-rules></x-rules> --}}
     <div class="w-screen flex justify-center mt-4">
         <div class="grid grid-cols-1 gap-4 place-content-center max-w-4xl">
-            <div class="p-4 bg-white align-middle">
+            <div class="p-4 bg-white bg-opacity-90 align-middle">
                 <p class="text-center py-2 font-bold text-xl">
                     ლენოვოს გათამაშების პირობები:
                 </p>
@@ -18,7 +18,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="p-4 bg-white align-middle">
+            <div class="p-4 bg-white bg-opacity-90 align-middle">
                 <p class="text-center py-2 font-bold text-xl">
                     ბილეთების დაგროვების პრინციპი:
                 </p>
@@ -40,7 +40,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="p-4 mb-8 bg-white align-middle">
+            <div class="p-4 mb-8 bg-white bg-opacity-90 align-middle">
                 <p class="text-center py-2 font-bold text-xl">
                     პრიზები:
                 </p>

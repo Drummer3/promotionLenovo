@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="pt-6">
         <div class="max-w-2xl mx-auto pb-4 sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm">
+            <div class="bg-white bg-opacity-90 overflow-hidden shadow-sm">
                 <p class="text-xl text-center py-2">
                     My tikets: {{ $tikets }}
                 </p>
